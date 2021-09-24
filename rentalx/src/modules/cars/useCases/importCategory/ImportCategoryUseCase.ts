@@ -46,7 +46,6 @@ class ImportCategoryUseCase {
       if(!existCategory){
         await this.categoriesRepository.create({ name, description});
       }
-
     });
   }
 }
