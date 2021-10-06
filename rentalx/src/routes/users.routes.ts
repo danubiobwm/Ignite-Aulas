@@ -1,10 +1,10 @@
-import { CreateCategoryController } from '@modules/cars/useCases/createCategory/CreateCategoryController';
+import { CreateUserController } from '@modules/accounts/useCases/createUser/CreateUserController';
 import {Router} from 'express';
 
 const usersRoutes = Router();
 
-const createCategoryController = new CreateCategoryController();
+const createUserController = new CreateUserController();
 
-usersRoutes.post('/', createCategoryController.handle);
+usersRoutes.post('/', createUserController.handle);
 
 export {usersRoutes}
