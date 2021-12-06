@@ -6,6 +6,7 @@ import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { AppError } from '@shared/errors/AppError';
 
 interface IRequest {
+  id: string;
   name: string;
   description: string;
   daily_rate: number;
@@ -22,6 +23,7 @@ class CreateCarUseCase {
     private carsRepository: ICarsRepository
   ) { }
   async execute({
+    id,
     name,
     description,
     daily_rate,
@@ -37,6 +39,7 @@ class CreateCarUseCase {
     }
 
     const car = await this.carsRepository.create({
+      id,
       name,
       description,
       daily_rate,
